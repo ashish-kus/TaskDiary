@@ -1,4 +1,18 @@
 #!/bin/bash
+#
+#########    [ Task Daiery [ task manager or simpally todo ]    #################
+#
+#
+#  █████╗ ███████╗██╗  ██╗██╗███████╗██╗  ██╗      ██╗  ██╗██╗   ██╗███████╗
+# ██╔══██╗██╔════╝██║  ██║██║██╔════╝██║  ██║      ██║ ██╔╝██║   ██║██╔════╝
+# ███████║███████╗███████║██║███████╗███████║█████╗█████╔╝ ██║   ██║███████╗
+# ██╔══██║╚════██║██╔══██║██║╚════██║██╔══██║╚════╝██╔═██╗ ██║   ██║╚════██║
+# ██║  ██║███████║██║  ██║██║███████║██║  ██║      ██║  ██╗╚██████╔╝███████║
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+#
+#                                         Gmail: ashish.kus2408@gmail.com
+##################################################################################
+
 #-------------------------------------------------------------------------->[ checking required files. ]
 if [ ! -d $HOME/.todo/ ]; then 
   mkdir $HOME/.todo/
@@ -9,8 +23,8 @@ DEFAULT_LIST=$HOME/.todo/TODO
 LIST_DIR=$HOME/.todo/
 LISTS=($HOME/.todo/*)
 CLIST=$DEFAULT_LIST
-ATTRIBUTES=""
-TXTRESET=" \033[0m"
+# ATTRIBUTES=""
+# TXTRESET=" \033[0m"
 #--------------------------------------------------------------------------> [ quotes list ]
 quotes() {
 ARRAY=(
@@ -64,7 +78,8 @@ add_task(){
   else
     ATTRIBUTES="\033[0;32m "
 
-    echo -e $ATTRIBUTES $TASK $TXTRESET >> $CLIST
+#   echo -e $ATTRIBUTES $TASK $TXTRESET >> $CLIST
+    echo -e  $TASK  >> $CLIST
   fi
   add_task
 }
@@ -96,7 +111,7 @@ show_tasks(){
 #------------------------------------------------------------------------> [ clear_lilst ] remove all TASKs ]
 clear_list(){
   read -p "This will remoce all TASK from the list [y/N]:" delete
-  if [[ $delete == "Y" ]] ; then
+  if [[ $delete == "y" ]] ; then
       > $CLIST
     else
       echo "List not cleared"
@@ -117,12 +132,14 @@ delete_task(){
 #------------------------------------------------------------------------> [ HELP ]
 help(){
   echo "OPTION: <ENTER> to exit"
-  echo "        l,lists    : to show all lists you have."
   echo "        a,add      : to add task to perticular list by default its TODO."
-  echo "        al.addlist : to add new list of task to be done."
   echo "        ls,tasklist: to list all the task in the list chosen"
+  echo "        l,lists    : to show all lists you have."
+  echo "        al.addlist : to add new list of task to be done."
   echo "        d,done     : to mark done or simpally remove from list chosen"
-  echo "        c,clear    : to clear every task from current list"
+  echo "        c,clear    : to clear the terminal"
+  echo "        rml,removelist : to remove a perticular list"
+  echo "        cl,cleanlist   : to clear every task from current list"
 
 }
 #--------------------------------------------------------------------------> [ ARGUMENT Handeling ]
@@ -156,7 +173,7 @@ while read -p "OPTION\h: " OPTION; do
       ;;
     c|clear) clear
       ;;
-    cl|clear) clear_list
+    cl|cleanlist) clear_list
       ;;
     h|help) help 
       ;;
@@ -164,4 +181,5 @@ while read -p "OPTION\h: " OPTION; do
       ;;
   esac
 done
+
 
