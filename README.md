@@ -31,4 +31,4 @@ OPTION\h:
 - [ ] Better Data Structure 
 - [ ] Better UI
 
-# NOTE: This was a practice project, a hole new cli tool is coming soon with hole new features and much more. 
+### NOTE: This was a practice project, a hole new cli tool is coming soon with hole new features and much more. 
