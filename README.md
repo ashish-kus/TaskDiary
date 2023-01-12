@@ -25,10 +25,10 @@ OPTION\h:
 ```
 
 ### Todo
-- [ ] add time-stamp and due, 
+- [ ] Add time-stamp and due date, 
 - [ ] keep track of task done,
 - [ ] Integration with online api,
 - [ ] Better Data Structure 
-- [ ] Better UI
+- [ ] Better UI (User interaction)
 
-### NOTE: This was a practice project, a hole new cli tool is coming soon with hole new features and much more. 
+### NOTE: This was a practice project, a whole new cli tool is coming soon with whole new features and much more. 
